@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Visualizer</title>
+
+    <link rel="stylesheet" href="https://materialdesignicons.com/cdn/5.1.45/css/materialdesignicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- <script src="sorting-algorithms.js"></script> -->
+    <script src="https://polyfill.io/v3/polyfill.js"></script>
+    <script type="module" src="app/app.js"></script>
+</head>
+
+<body>
+    <!-- Github & LinkedIn -->
+    <div class="credits">
+        <div class="github">
+            <a href="https://github.com/abdulsohailmohd/sorting-visualizer" target="_blank" title="Github">
+                <img src="assets/github-logo.svg" alt="Github" />
+            </a>
+        </div>
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/sohail-js" target="_blank" title="LinkedIn">
+                <img src="assets/linkedin.svg" alt="LinkedIn" />
+            </a>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="toolbar toolbar-top">
+            <button id="generateArrayBtn" class="btn btn-primary-outline">Generate Array</button>
+
+            <!-- Array Size -->
+            <div class="slider-container">
+                <label for="arraySizeSliderElement">Array size</label>
+                <input type="range" min="4" max="200" value="150" class="slider" id="arraySizeSliderElement">
+            </div>
+
+            <!-- Animation SPeed -->
+            <div class="slider-container animation-speed">
+                <label for="animationSpeedSliderElement">Animation Speed</label>
+                <div>
+                    <span>Fast</span>
+                    <input type="range" min="1" max="500" value="1" class="slider" id="animationSpeedSliderElement">
+                    <span>Slow</span>
+                </div>
+            </div>
+
+            <!-- Sorting Algorithm -->
+            <select name="sorting-algorithms" id="sortingAlgorithms">
+                <option value="mergeSort" selected>Merge Sort</option>
+                <option value="quickSort">Quick Sort</option>
+            </select>
+        </div>
+
+        <div id="barsElement"></div>
+
+        <div class="bottom">
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="0" class="slider" id="sliderElement">
+            </div>
+
+            <div class="toolbar toolbar-bottom">
+                <button id="toggleAnimationBtn" class="btn btn-primary btn-rounded" title="Play / Pause">
+                    <i class="mdi mdi-play"></i>
+                </button>
+                <button id="stopAnimationBtn" class="btn btn-rounded btn-secondary" title="Stop">
+                    <i class="mdi mdi-stop"></i>
+                </button>
+                <!-- <button onclick="pauseAnimation()">Pause</button> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCwP4hpK8XkZKjqmSfIPEhfj8ZidUavZpw",
+            authDomain: "sorting-visualizer-js.firebaseapp.com",
+            databaseURL: "https://sorting-visualizer-js.firebaseio.com",
+            projectId: "sorting-visualizer-js",
+            storageBucket: "sorting-visualizer-js.appspot.com",
+            messagingSenderId: "629078559616",
+            appId: "1:629078559616:web:c10f670da4ebf447400f65",
+            measurementId: "G-TLNRTHPBXH"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+
+</html>
